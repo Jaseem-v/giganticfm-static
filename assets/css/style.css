@@ -126,13 +126,14 @@ p {
 .navbar-links {
     list-style-type: none;
     display: flex;
+    gap: 20px;
 }
 
 .navbar-links li a {
     display: block;
     text-decoration: none;
     color: #707070;
-    padding: 10px 25px;
+    padding: 10px 10px;
     transition: 0.4s all;
 }
 
@@ -196,7 +197,8 @@ p {
     width: 75%;
 }
 
-.navbar-links li:hover>a {
+.navbar-links li:hover>a,
+.navbar-links li.active>a {
     border-bottom: 5px solid #00ce7d;
 }
 
@@ -2696,6 +2698,7 @@ ul.logos li {
     background-color: white;
     margin-left: -1px;
     margin-top: -2px;
+    overflow: hidden;
 }
 
 .subscribe-email {
@@ -4507,6 +4510,7 @@ form.content-form textarea {
     padding-top: 20px;
     color: #555;
     margin-bottom: 15px;
+    background: #fff;
 }
 
 form.content-form textarea::placeholder {
@@ -6570,6 +6574,226 @@ img.light-icon {
     margin-left: 30px !important;
 }
 
-.image{
+.image {
     width: 50px;
+}
+
+
+/* header */
+
+.header {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    padding: 0;
+    z-index: 0;
+}
+
+@media only screen and (max-width: 992px) {
+    .header {
+        height: auto;
+    }
+}
+
+.header__bg {
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 90vh;
+    z-index: 0;
+    margin-left: -1px;
+    position: relative;
+}
+
+.header__bg::after {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    content: "";
+    background: #00000088;
+}
+
+@media only screen and (max-width: 992px) {
+    .header__bg {
+        height: auto;
+    }
+}
+
+.header__left-part,
+.header__right-part {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 90vh;
+}
+
+@media only screen and (max-width: 992px) {
+
+    .header__left-part,
+    .header__right-part {
+        height: auto;
+        align-items: center;
+        padding: 30px;
+    }
+}
+
+
+.header__left-part {
+    color: #fff;
+}
+
+@media only screen and (max-width: 992px) {
+    .header__left-part {
+        padding: 50px 10px;
+    }
+}
+
+.header__right-part img {
+    width: 100%;
+}
+
+.header .owl-item.active h1,
+.header .owl-item.active p,
+.header .owl-item.active .btn {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+    animation-delay: 0.3s;
+}
+
+.header .owl-nav .owl-prev,
+.header .owl-nav .owl-next {
+    position: absolute;
+    top: 43%;
+    opacity: 0;
+    transition: all 0.4s ease-out;
+    background: rgba(0, 0, 0, 0.5) !important;
+    width: 40px;
+    cursor: pointer;
+    height: 40px;
+    position: absolute;
+    display: block;
+    z-index: 1000;
+    border-radius: 0;
+}
+
+.header .owl-nav .owl-prev span,
+.header .owl-nav .owl-next span {
+    font-size: 16.875px;
+    color: #fff;
+}
+
+.header .owl-nav .owl-prev:focus,
+.header .owl-nav .owl-next:focus {
+    outline: 0;
+}
+
+.header .owl-nav .owl-prev:hover,
+.header .owl-nav .owl-next:hover {
+    background: #000 !important;
+}
+
+.header:hover .owl-prev,
+.header:hover .owl-next {
+    opacity: 1;
+}
+
+.header:hover .owl-prev {
+    left: 0;
+}
+
+.header:hover .owl-next {
+    right: 0;
+}
+
+
+.heading--primary {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 52px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 992px) {
+    .heading--primary {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .heading--primary {
+        font-size: 40px;
+    }
+}
+
+
+
+
+
+
+.paragraph--primary {
+    max-width: 450px;
+    color: #d2d2d2;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 992px) {
+    .paragraph--primary {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .paragraph--primary {
+        font-size: 14px;
+    }
+}
+
+
+.paragraph--footer {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+header.sticky {
+    position: fixed;
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+}
+
+header.sticky .navbar-links li>a {
+    color: #000;
+}
+
+header.sticky .logofont {
+    color: #000;
+}
+
+
+.btn-header {
+    margin-top: 25px;
+}
+
+.zoom-slider-data h3:before {
+    display: none;
+}
+
+.item.zoom-slider-img:hover h2 {
+    text-decoration: underline;
+}
+
+.contact-phone{
+    font-size: 24px;
+    margin-bottom: 14px;
 }
