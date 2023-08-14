@@ -1062,3 +1062,18 @@ ul.logos li {
         display: none;
     }
 }
+
+
+
+
+@media only screen and (max-width: 540px) {
+    .header__left-part {
+        padding: 180px 10px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .heading--primary {
+        font-size: 30px;
+    }
+}
